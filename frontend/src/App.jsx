@@ -7,6 +7,9 @@ import axios from 'axios'
 function App() {
 const [employee,setEmployee]=useState([]);
 useEffect(()=>{
+
+// ########### use axios to connect/get data from backend
+
   axios.get('/api/employee')
   .then((response)=>{
    setEmployee(response.data)
@@ -14,6 +17,24 @@ useEffect(()=>{
   .catch((error)=>{
     console.log("error is found",error)
   })
+
+
+// ########    use fetch to connect/get data from backend
+
+//   fetch('/api/employee')
+//   .then((response)=>{
+//     return response.json()
+//   })
+//   .then((data)=>{
+// //  console.log(data)
+//  setEmployee(data)
+//   })
+//   .catch((error)=>{
+//     console.log("error is found",error)
+//   })
+
+
+
 })
 
 
